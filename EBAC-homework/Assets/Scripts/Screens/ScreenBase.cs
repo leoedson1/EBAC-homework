@@ -16,7 +16,9 @@ namespace Screens
     public class ScreenBase : MonoBehaviour
     {
         public ScreenType screenType;
+
         public List<Transform> listOfObjects;
+        public List<Typer> listOfText;
         public bool startHidden = false;
         [Header("Animation")]
         public float animationDuration = .3f;
@@ -58,11 +60,21 @@ namespace Screens
                 obj.gameObject.SetActive(true);
                 obj.DOScale(0, animationDuration).From().SetDelay(i * delayBetweenObjects);
             }
+
+            Invoke(nameof(StartType), delayBetweenObjects * listOfObjects.Count);
         }
 
         private void HideObjects()
         {
             listOfObjects.ForEach(i => i.gameObject.SetActive(false));
+        }
+
+        private void StartType()
+        {
+            for(int i = 0; i < listOfText.Count; i++)
+            {
+                listOfText[i].StartType();
+            }
         }
     }
 }
