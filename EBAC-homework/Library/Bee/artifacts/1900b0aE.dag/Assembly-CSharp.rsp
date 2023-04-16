@@ -354,6 +354,9 @@
 -r:"Library/Bee/artifacts/1900b0aE.dag/UnityEngine.UI.ref.dll"
 "Assets/Scripts/Screens/ButtonScaler.cs"
 "Assets/Scripts/Screens/ScreenBase.cs"
+"Assets/Scripts/Screens/ScreenHelper.cs"
+"Assets/Scripts/Screens/ScreenManager.cs"
+"Assets/Scripts/Singleton.cs"
 "Assets/Scripts/Utils/Typer.cs"
 -langversion:9.0
 

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using NaughtyAttributes;
 using DG.Tweening;
 
@@ -17,9 +18,13 @@ namespace Screens
     {
         public ScreenType screenType;
 
+        [Header("Lists")]
         public List<Transform> listOfObjects;
         public List<Typer> listOfText;
+       
+        public Image uiBackground;
         public bool startHidden = false;
+
         [Header("Animation")]
         public float animationDuration = .3f;
         public float delayBetweenObjects = .05f;
@@ -33,14 +38,14 @@ namespace Screens
         }
 
         [Button]
-        protected virtual void Show()
+        public virtual void Show()
         {
             ShowObjects();
             Debug.Log("Show");
         }
 
         [Button]
-        protected virtual void Hide()
+        public virtual void Hide()
         {
             HideObjects();
             Debug.Log("Hide");
@@ -49,6 +54,7 @@ namespace Screens
         private void ForceShowObjects()
         {
             listOfObjects.ForEach(i => i.gameObject.SetActive(true));
+            uiBackground.enabled = true;
         }
 
         private void ShowObjects()
@@ -62,11 +68,13 @@ namespace Screens
             }
 
             Invoke(nameof(StartType), delayBetweenObjects * listOfObjects.Count);
+            uiBackground.enabled = true;
         }
 
         private void HideObjects()
         {
             listOfObjects.ForEach(i => i.gameObject.SetActive(false));
+            uiBackground.enabled = false;
         }
 
         private void StartType()
