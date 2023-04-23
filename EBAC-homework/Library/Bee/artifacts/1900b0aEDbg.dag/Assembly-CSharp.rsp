@@ -346,10 +346,13 @@
 -r:"Library/Bee/artifacts/1900b0aEDbg.dag/Unity.VSCode.Editor.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aEDbg.dag/UnityEditor.UI.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aEDbg.dag/UnityEngine.UI.ref.dll"
+"Assets/Scripts/Ebac/Core/Singleton/Singleton.cs"
 "Assets/Scripts/Ebac/StateMachine/FSMExample.cs"
 "Assets/Scripts/Ebac/StateMachine/StateBase.cs"
 "Assets/Scripts/Ebac/StateMachine/StateMachine.cs"
 "Assets/Scripts/Ebac/StateMachine/StateMachineEditor.cs"
+"Assets/Scripts/GameManager/GameManager.cs"
+"Assets/Scripts/GameManager/GMStateIntro.cs"
 -langversion:9.0
 
 /deterministic
