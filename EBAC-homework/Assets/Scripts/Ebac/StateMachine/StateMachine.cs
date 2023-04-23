@@ -3,57 +3,38 @@ using System.Collections.Generic;
 using UnityEngine;
 using NaughtyAttributes;
 
-public class StateMachine : MonoBehaviour
+public class StateMachine<T> where T : System.Enum
 {
-    public enum States
-    {
-        NONE
-    }
-
-    //chave
-    public Dictionary<States, StateBase> dictionaryState;
+    public Dictionary<T, StateBase> dictionaryState;
 
     private StateBase _currentState;
     public float timeToStartGame = 1f;
 
-    private void Awake()
+    public StateBase CurrentState
     {
-        dictionaryState =  new Dictionary<States, StateBase>();
-        dictionaryState.Add(States.NONE, new StateBase());
-
-        SwitchState(States.NONE);
-
-        Invoke(nameof(StartGame), timeToStartGame);
-    }
-    
-    [Button]
-    private void StartGame()
-    {
-        SwitchState(States.NONE);
+        get {return _currentState; }
     }
 
-    private void SwitchState(States state)
+    public void Init()
+    {
+        dictionaryState = new Dictionary<T, StateBase>();
+    }
+
+    public void RegisterStates(T typeEnum, StateBase state)
+    {
+        dictionaryState =  new Dictionary<T, StateBase>();   
+        dictionaryState.Add(typeEnum, state);
+    }
+
+    public void SwitchState(T state)
     {
         if (_currentState != null) _currentState.OnStateExit();
-
-        if(Input.GetKeyDown(KeyCode.O))
-        {
-            //SwitchState(States.DEAD);
-        }
+        _currentState = dictionaryState[state];
+        _currentState.OnStateEnter();
     }
 
-#if UNITY_EDITOR
-    #region DEBUG
-    [Button]
-    private void ChangeStateToStateA()
+    public void Update()
     {
-        SwitchState(States.NONE);
+        if (_currentState != null) _currentState.OnStateStay();
     }
-    [Button]
-    private void ChangeStateToStateB()
-    {
-        SwitchState(States.NONE);
-    }
-    #endregion
-#endif
 }
