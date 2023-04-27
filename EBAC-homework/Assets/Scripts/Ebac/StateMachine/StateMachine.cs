@@ -25,8 +25,15 @@ namespace Ebac.StateMachine
 
         public void RegisterStates(T typeEnum, StateBase state)
         {
-            dictionaryState =  new Dictionary<T, StateBase>();   
-            dictionaryState.Add(typeEnum, state);
+            if(!dictionaryState.ContainsKey(typeEnum))
+            {
+                dictionaryState.Add(typeEnum, state);
+            }
+            else
+            {
+                Debug.LogError("Chave já registrada no dicionário" + typeEnum.ToString());
+            }
+            //dictionaryState =  new Dictionary<T, StateBase>();   
         }
 
         public void SwitchState(T state)
