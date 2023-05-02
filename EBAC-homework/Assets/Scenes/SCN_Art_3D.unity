@@ -5212,7 +5212,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1056811597
 Transform:
   m_ObjectHideFlags: 0
@@ -5359,8 +5359,9 @@ MonoBehaviour:
   animator: {fileID: 236602449}
   characterController: {fileID: 1082578303}
   speed: 25
+  jumpSpeed: 15
   turnSpeed: 300
-  gravity: 9.8
+  gravity: 28
 --- !u!4 &1082578305
 Transform:
   m_ObjectHideFlags: 0
