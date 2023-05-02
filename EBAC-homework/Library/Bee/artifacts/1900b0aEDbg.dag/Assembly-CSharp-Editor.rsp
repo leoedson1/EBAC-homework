@@ -340,6 +340,8 @@
 -r:"G:/GitHub/EBAC-homework/EBAC-homework/Library/PackageCache/com.unity.visualscripting@1.8.0/Runtime/VisualScripting.Flow/Dependencies/NCalc/Unity.VisualScripting.Antlr3.Runtime.dll"
 -r:"Library/Bee/artifacts/1900b0aEDbg.dag/Assembly-CSharp-firstpass.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aEDbg.dag/Assembly-CSharp.ref.dll"
+-r:"Library/Bee/artifacts/1900b0aEDbg.dag/Cinemachine.ref.dll"
+-r:"Library/Bee/artifacts/1900b0aEDbg.dag/com.unity.cinemachine.editor.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aEDbg.dag/NaughtyAttributes.Core.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aEDbg.dag/NaughtyAttributes.Editor.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aEDbg.dag/NaughtyAttributes.Test.ref.dll"
