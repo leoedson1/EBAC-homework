@@ -112,6 +112,7 @@
 -define:ENABLE_TERRAIN
 -define:ENABLE_TILEMAP
 -define:ENABLE_TIMELINE
+-define:ENABLE_INPUT_SYSTEM
 -define:ENABLE_LEGACY_INPUT_MANAGER
 -define:TEXTCORE_FONT_ENGINE_1_5_OR_NEWER
 -define:CSHARP_7_OR_LATER
@@ -330,6 +331,7 @@
 -r:"Library/Bee/artifacts/1900b0aEDbg.dag/NaughtyAttributes.Core.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aEDbg.dag/NaughtyAttributes.Editor.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aEDbg.dag/NaughtyAttributes.Test.ref.dll"
+-r:"Library/Bee/artifacts/1900b0aEDbg.dag/Unity.InputSystem.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aEDbg.dag/Unity.PlasticSCM.Editor.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aEDbg.dag/Unity.Rider.Editor.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aEDbg.dag/Unity.TextMeshPro.Editor.ref.dll"
@@ -348,6 +350,7 @@
 -r:"Library/Bee/artifacts/1900b0aEDbg.dag/Unity.VSCode.Editor.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aEDbg.dag/UnityEditor.UI.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aEDbg.dag/UnityEngine.UI.ref.dll"
+"Assets/Inputs/Inputs.cs"
 "Assets/Scripts/Ebac/Core/Singleton/Singleton.cs"
 "Assets/Scripts/Ebac/StateMachine/FSMExample.cs"
 "Assets/Scripts/Ebac/StateMachine/StateBase.cs"
@@ -355,7 +358,11 @@
 "Assets/Scripts/Ebac/StateMachine/StateMachineEditor.cs"
 "Assets/Scripts/GameManager/GameManager.cs"
 "Assets/Scripts/GameManager/GMStateIntro.cs"
+"Assets/Scripts/Gun/BaseGun.cs"
+"Assets/Scripts/Gun/BaseSmallProjectile.cs"
 "Assets/Scripts/Player/Player.cs"
+"Assets/Scripts/Player/PlayerAbilityBase.cs"
+"Assets/Scripts/Player/PlayerAbilityShoot.cs"
 -langversion:9.0
 
 /deterministic
