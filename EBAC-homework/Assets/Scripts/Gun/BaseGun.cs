@@ -8,6 +8,7 @@ public class BaseGun : MonoBehaviour
 
     public Transform positionToShoot;
     public float timeBetweenShots = .3f;
+    public float speed = 50f;
 
     private Coroutine _currentCoroutine;
 
@@ -19,11 +20,12 @@ public class BaseGun : MonoBehaviour
             yield return new WaitForSeconds(timeBetweenShots);
         }
     }
-    public void Shoot()
+    public virtual void Shoot()
     {
         var projectile = Instantiate(prefabProjectile);
         projectile.transform.position = positionToShoot.position;
         projectile.transform.rotation = positionToShoot.rotation;
+        projectile.speed = speed;
     }
 
     public void StartShoot()
