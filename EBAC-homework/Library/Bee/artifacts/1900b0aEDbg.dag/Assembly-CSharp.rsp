@@ -365,6 +365,7 @@
 "Assets/Scripts/Player/Player.cs"
 "Assets/Scripts/Player/PlayerAbilityBase.cs"
 "Assets/Scripts/Player/PlayerAbilityShoot.cs"
+"Assets/Scripts/UI/UIGunUpdate.cs"
 -langversion:9.0
 
 /deterministic
