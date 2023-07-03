@@ -357,6 +357,7 @@
 -r:"Library/Bee/artifacts/1900b0aEDbg.dag/UnityEditor.UI.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aEDbg.dag/UnityEngine.UI.ref.dll"
 "Assets/Inputs/Inputs.cs"
+"Assets/Scripts/Animation/AnimationBase.cs"
 "Assets/Scripts/Ebac/Core/Singleton/Singleton.cs"
 "Assets/Scripts/Ebac/StateMachine/FSMExample.cs"
 "Assets/Scripts/Ebac/StateMachine/StateBase.cs"
