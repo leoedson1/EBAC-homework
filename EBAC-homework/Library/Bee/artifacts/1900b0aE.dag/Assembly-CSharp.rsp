@@ -373,6 +373,7 @@
 "Assets/Scripts/Player/PlayerAbilityBase.cs"
 "Assets/Scripts/Player/PlayerAbilityShoot.cs"
 "Assets/Scripts/UI/UIGunUpdate.cs"
+"Assets/Scripts/Utils/FlashColor.cs"
 -langversion:9.0
 
 /deterministic
