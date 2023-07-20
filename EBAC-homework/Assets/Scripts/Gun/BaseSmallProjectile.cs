@@ -6,7 +6,6 @@ public class BaseSmallProjectile : MonoBehaviour
 {
     public float timeToDestroy = 2f;
     public int damageAmount = 1;
-
     public float speed = 50f;
 
     private void Awake()
@@ -20,6 +19,10 @@ public class BaseSmallProjectile : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
+        var damageable = collision.transform.GetComponent<IDamageable>();
 
+        if (damageable != null) damageable.Damage(damageAmount);
+
+        Destroy(gameObject);
     }
 }
