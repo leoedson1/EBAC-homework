@@ -11,7 +11,7 @@ public class PlayerAbilityShoot : PlayerAbilityBase
     public Transform gunPosition;
     public TMP_Text equippedGunUI;
 
-    private BaseGun _currentGun;
+    [SerializeField] private BaseGun _currentGun;
 
     protected override void Init()
     {

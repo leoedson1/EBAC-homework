@@ -21,8 +21,17 @@ public class BaseSmallProjectile : MonoBehaviour
     {
         var damageable = collision.transform.GetComponent<IDamageable>();
 
-        if (damageable != null) damageable.Damage(damageAmount);
+        if (damageable != null) 
+        {
+            damageable.Damage(damageAmount, transform.forward);
+            /*
+            Vector3 dir = collision.transform.position - transform.position;
+            dir = -dir.normalized;
+            dir.y = 0;
 
+            damageable.Damage(damageAmount, dir);
+            */
+        }
         Destroy(gameObject);
     }
 }

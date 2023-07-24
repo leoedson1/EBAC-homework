@@ -52,12 +52,14 @@ namespace Enemy
             PlayAnimationByTrigger(AnimationType.DEATH);
         }
 
-        public void OnDamage(float f)
+        public void OnDamage(float h)
         {
             if(flashColor != null) flashColor.Flash();
             if(dmgParticle != null) dmgParticle.Emit(15);
 
-            _currentLife -= f;
+            transform.position -= transform.forward;
+
+            _currentLife -= h;
 
             if(_currentLife <= 0)
             {
@@ -90,6 +92,21 @@ namespace Enemy
         {
             Debug.Log("Damage");
             OnDamage(damage);
+        }
+        public void Damage(float damage, Vector3 dir)
+        {
+            OnDamage(damage);
+            transform.DOMove(transform.position + dir, .1f);
+        }
+
+        private void OnCollisionEnter(Collision collision) 
+        {
+            Player p = collision.transform.GetComponent<Player>();
+
+            if(p != null)
+            {
+                p.Damage(1);
+            }
         }
     }
 }
