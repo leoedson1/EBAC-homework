@@ -362,6 +362,7 @@
 "Assets/Scripts/Ebac/StateMachine/StateMachine.cs"
 "Assets/Scripts/Ebac/StateMachine/StateMachineEditor.cs"
 "Assets/Scripts/Enemies/EnemyBase.cs"
+"Assets/Scripts/Enemies/EnemyWalk.cs"
 "Assets/Scripts/GameManager/GameManager.cs"
 "Assets/Scripts/GameManager/GMStateIntro.cs"
 "Assets/Scripts/Gun/BaseGun.cs"
