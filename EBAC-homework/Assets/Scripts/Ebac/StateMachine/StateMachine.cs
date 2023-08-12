@@ -36,11 +36,11 @@ namespace Ebac.StateMachine
             //dictionaryState =  new Dictionary<T, StateBase>();   
         }
 
-        public void SwitchState(T state)
+        public void SwitchState(T state, params object[] objs)
         {
             if (_currentState != null) _currentState.OnStateExit();
             _currentState = dictionaryState[state];
-            _currentState.OnStateEnter();
+            _currentState.OnStateEnter(objs);
         }
 
         public void Update()

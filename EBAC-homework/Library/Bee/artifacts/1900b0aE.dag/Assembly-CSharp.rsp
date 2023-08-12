@@ -361,6 +361,8 @@
 "Assets/Scripts/Ebac/StateMachine/StateBase.cs"
 "Assets/Scripts/Ebac/StateMachine/StateMachine.cs"
 "Assets/Scripts/Ebac/StateMachine/StateMachineEditor.cs"
+"Assets/Scripts/Enemies/BossBase.cs"
+"Assets/Scripts/Enemies/BossStates.cs"
 "Assets/Scripts/Enemies/EnemyBase.cs"
 "Assets/Scripts/Enemies/EnemyShoot.cs"
 "Assets/Scripts/Enemies/EnemyWalk.cs"
