@@ -9,7 +9,7 @@ namespace Boss
     {
         protected BossBase boss;
 
-        public override private void OnStateEnter(params object[] objs) 
+        public override void OnStateEnter(params object[] objs) 
         {
             base.OnStateEnter(objs);
             boss = (BossBase)objs[0];
@@ -17,7 +17,20 @@ namespace Boss
     }
     public class BossStateInit : BossStateBase
     {
-        BossStateBase.OnStateEnter(objs);
-        Debug.Log("Boss: " + boss);
+        public override void OnStateEnter(params object[] objs)
+        {
+            base.OnStateEnter(objs);
+            boss.StartInitAnimation();
+            Debug.Log("Boss: " + boss);
+        }
+    }
+
+        public class BossStateWalk : BossStateBase
+    {
+        public override void OnStateEnter(params object[] objs)
+        {
+            base.OnStateEnter(objs);
+            boss.GoToRandomPoint();
+        }
     }
 }
