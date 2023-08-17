@@ -15,8 +15,12 @@ namespace Boss
         ATTACK,
         DEATH
     }
-    public class BossBase : MonoBehaviour
+    public class BossBase : MonoBehaviour, IDamageable
     {
+        public Collider eCollider;
+        public FlashColor flashColor;
+        public ParticleSystem dmgParticle;
+
         [Header("Animation")]
         public float startAnimationDuration = .5f;
         public Ease startAnimationEase = Ease.OutBack;
@@ -52,6 +56,24 @@ namespace Boss
         private void OnBossKill(HealthBase h)
         {
             SwitchState(BossAction.DEATH);
+        }
+
+        public void Damage(float damage)
+        {
+            OnDamage(damage);
+        }
+        public void Damage(float damage, Vector3 dir)
+        {
+            OnDamage(damage);
+            transform.DOMove(transform.position + dir, .1f);            
+        }
+
+        public void OnDamage(float damage)
+        {
+            if(flashColor != null) flashColor.Flash();
+            if(dmgParticle != null) dmgParticle.Emit(15);
+
+            healthBase.Damage(damage);
         }
 
 #region ATTACK

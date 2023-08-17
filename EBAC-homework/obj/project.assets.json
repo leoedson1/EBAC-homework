@@ -1,111 +1,11 @@
 {
   "version": 3,
   "targets": {
-    ".NETStandard,Version=v2.0": {
-      "Assembly-CSharp/1.0.0": {
-        "type": "project",
-        "framework": ".NETStandard,Version=v2.0",
-        "dependencies": {
-          "Assembly-CSharp-firstpass": "1.0.0",
-          "NaughtyAttributes.Core": "1.0.0",
-          "NaughtyAttributes.Editor": "1.0.0",
-          "NaughtyAttributes.Test": "1.0.0"
-        },
-        "compile": {
-          "bin/placeholder/Assembly-CSharp.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/Assembly-CSharp.dll": {}
-        }
-      },
-      "Assembly-CSharp-firstpass/1.0.0": {
-        "type": "project",
-        "framework": ".NETStandard,Version=v2.0",
-        "dependencies": {
-          "NaughtyAttributes.Core": "1.0.0",
-          "NaughtyAttributes.Editor": "1.0.0",
-          "NaughtyAttributes.Test": "1.0.0"
-        },
-        "compile": {
-          "bin/placeholder/Assembly-CSharp-firstpass.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/Assembly-CSharp-firstpass.dll": {}
-        }
-      },
-      "NaughtyAttributes.Core/1.0.0": {
-        "type": "project",
-        "framework": ".NETStandard,Version=v2.0",
-        "compile": {
-          "bin/placeholder/NaughtyAttributes.Core.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/NaughtyAttributes.Core.dll": {}
-        }
-      },
-      "NaughtyAttributes.Editor/1.0.0": {
-        "type": "project",
-        "framework": ".NETStandard,Version=v2.0",
-        "dependencies": {
-          "NaughtyAttributes.Core": "1.0.0"
-        },
-        "compile": {
-          "bin/placeholder/NaughtyAttributes.Editor.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/NaughtyAttributes.Editor.dll": {}
-        }
-      },
-      "NaughtyAttributes.Test/1.0.0": {
-        "type": "project",
-        "framework": ".NETStandard,Version=v2.0",
-        "dependencies": {
-          "NaughtyAttributes.Core": "1.0.0"
-        },
-        "compile": {
-          "bin/placeholder/NaughtyAttributes.Test.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/NaughtyAttributes.Test.dll": {}
-        }
-      }
-    }
+    ".NETStandard,Version=v2.0": {}
   },
-  "libraries": {
-    "Assembly-CSharp/1.0.0": {
-      "type": "project",
-      "path": "Assembly-CSharp.csproj",
-      "msbuildProject": "Assembly-CSharp.csproj"
-    },
-    "Assembly-CSharp-firstpass/1.0.0": {
-      "type": "project",
-      "path": "Assembly-CSharp-firstpass.csproj",
-      "msbuildProject": "Assembly-CSharp-firstpass.csproj"
-    },
-    "NaughtyAttributes.Core/1.0.0": {
-      "type": "project",
-      "path": "NaughtyAttributes.Core.csproj",
-      "msbuildProject": "NaughtyAttributes.Core.csproj"
-    },
-    "NaughtyAttributes.Editor/1.0.0": {
-      "type": "project",
-      "path": "NaughtyAttributes.Editor.csproj",
-      "msbuildProject": "NaughtyAttributes.Editor.csproj"
-    },
-    "NaughtyAttributes.Test/1.0.0": {
-      "type": "project",
-      "path": "NaughtyAttributes.Test.csproj",
-      "msbuildProject": "NaughtyAttributes.Test.csproj"
-    }
-  },
+  "libraries": {},
   "projectFileDependencyGroups": {
-    ".NETStandard,Version=v2.0": [
-      "Assembly-CSharp >= 1.0.0",
-      "Assembly-CSharp-firstpass >= 1.0.0",
-      "NaughtyAttributes.Core >= 1.0.0",
-      "NaughtyAttributes.Editor >= 1.0.0",
-      "NaughtyAttributes.Test >= 1.0.0"
-    ]
+    ".NETStandard,Version=v2.0": []
   },
   "packageFolders": {
     "C:\\Users\\leona\\.nuget\\packages\\": {}
@@ -113,9 +13,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "d:\\GitHub\\EBAC-homework\\EBAC-homework\\Assembly-CSharp-Editor.csproj",
-      "projectName": "Assembly-CSharp-Editor",
-      "projectPath": "d:\\GitHub\\EBAC-homework\\EBAC-homework\\Assembly-CSharp-Editor.csproj",
+      "projectUniqueName": "d:\\GitHub\\EBAC-homework\\EBAC-homework\\NaughtyAttributes.Core.csproj",
+      "projectName": "NaughtyAttributes.Core",
+      "projectPath": "d:\\GitHub\\EBAC-homework\\EBAC-homework\\NaughtyAttributes.Core.csproj",
       "packagesPath": "C:\\Users\\leona\\.nuget\\packages\\",
       "outputPath": "d:\\GitHub\\EBAC-homework\\EBAC-homework\\obj\\",
       "projectStyle": "PackageReference",
@@ -133,23 +33,7 @@
       "frameworks": {
         "netstandard2.0": {
           "targetAlias": "netstandard2.0",
-          "projectReferences": {
-            "d:\\GitHub\\EBAC-homework\\EBAC-homework\\Assembly-CSharp-firstpass.csproj": {
-              "projectPath": "d:\\GitHub\\EBAC-homework\\EBAC-homework\\Assembly-CSharp-firstpass.csproj"
-            },
-            "d:\\GitHub\\EBAC-homework\\EBAC-homework\\Assembly-CSharp.csproj": {
-              "projectPath": "d:\\GitHub\\EBAC-homework\\EBAC-homework\\Assembly-CSharp.csproj"
-            },
-            "d:\\GitHub\\EBAC-homework\\EBAC-homework\\NaughtyAttributes.Core.csproj": {
-              "projectPath": "d:\\GitHub\\EBAC-homework\\EBAC-homework\\NaughtyAttributes.Core.csproj"
-            },
-            "d:\\GitHub\\EBAC-homework\\EBAC-homework\\NaughtyAttributes.Editor.csproj": {
-              "projectPath": "d:\\GitHub\\EBAC-homework\\EBAC-homework\\NaughtyAttributes.Editor.csproj"
-            },
-            "d:\\GitHub\\EBAC-homework\\EBAC-homework\\NaughtyAttributes.Test.csproj": {
-              "projectPath": "d:\\GitHub\\EBAC-homework\\EBAC-homework\\NaughtyAttributes.Test.csproj"
-            }
-          }
+          "projectReferences": {}
         }
       },
       "warningProperties": {

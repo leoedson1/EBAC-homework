@@ -36,7 +36,7 @@ public class HealthBase : MonoBehaviour
     }
 
     [NaughtyAttributes.Button]
-    public void Damage()
+    public void ApplyDamage()
     {
         Damage(5);
     }
