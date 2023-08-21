@@ -6167,6 +6167,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e5ecfccf53bdf846bda9942f48550fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  colliders:
+  - {fileID: 1082578307}
+  - {fileID: 1082578303}
   animator: {fileID: 236602449}
   characterController: {fileID: 1082578303}
   jumpSpeed: 15
