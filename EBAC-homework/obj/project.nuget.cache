@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "4zD7okCC/550M4sS5Ry0fzz73cLlsfO+Y4xPYO1tb3n5syhqPIel+4+7siLQ5kWxC+5+Ip66fsH+pmWkNSezbQ==",
+  "dgSpecHash": "rfQ0ttj8ywcOjmRinX22l5g5utVCHmQvdtaWBwl/HPHC/rvpSbtZ4xb/yyEFBrEo6GjFfeDlLPxdfrBr6E+LXQ==",
   "success": true,
-  "projectFilePath": "d:\\GitHub\\EBAC-homework\\EBAC-homework\\NaughtyAttributes.Core.csproj",
+  "projectFilePath": "d:\\GitHub\\EBAC-homework\\EBAC-homework\\Assembly-CSharp.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }
