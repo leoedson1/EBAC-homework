@@ -45,7 +45,10 @@ namespace Boss
         {
            Init();
            OnValidate();
-           healthBase.OnKill += OnBossKill;
+           if(healthBase != null)
+           {
+               healthBase.OnKill += OnBossKill;
+           }
         }
 
         private void Init()
@@ -99,6 +102,16 @@ namespace Boss
             }
 
             endCallback?.Invoke();
+        }
+
+        private void OnCollisionEnter(Collision collision) 
+        {
+            Player p = collision.transform.GetComponent<Player>();
+
+            if(p != null)
+            {
+                p.healthBase.Damage(1);
+            }
         }
 #endregion
 

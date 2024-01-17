@@ -6,6 +6,7 @@ using TMPro;
 
 public class PlayerAbilityShoot : PlayerAbilityBase
 {
+    public Player mainPlayer;
     public BaseGun gun1;
     public BaseGun gun2;
     public Transform gunPosition;
@@ -31,25 +32,28 @@ public class PlayerAbilityShoot : PlayerAbilityBase
     {        
         if(g != _currentGun)
         { 
-        Destroy(_currentGun);
+            Destroy(_currentGun);
 
-        equippedGunUI.text = t;
+            equippedGunUI.text = t;
 
-        _currentGun = Instantiate(g, gunPosition);
+            _currentGun = Instantiate(g, gunPosition);
 
-        _currentGun.transform.localPosition = _currentGun.transform.localEulerAngles = Vector3.zero;
+            _currentGun.transform.localPosition = _currentGun.transform.localEulerAngles = Vector3.zero;
         }
     }
-
+/*
     private void DestroyGun()
     {
         Destroy(_currentGun);
     }
-
+*/
     private void StartShoot()
     {
-        _currentGun.StartShoot();
-        Debug.Log("Start Shoot");
+        if(player.alive == true) //condicional que inseri depois. não sei se é a melhor opção pra fazer essa checagem.
+        {
+            _currentGun.StartShoot();
+            Debug.Log("Start Shoot");
+        }
     }
     private void CancelShoot()
     {

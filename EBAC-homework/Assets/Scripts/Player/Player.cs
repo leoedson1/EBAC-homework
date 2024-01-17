@@ -22,9 +22,11 @@ public class Player : MonoBehaviour//, IDamageable
     [Header("Flash")]
     public List<FlashColor> flashColors;
 
+    [Header("Health")]
     public HealthBase healthBase;
+    public UIFillUpdate uIFillUpdate;
 
-    private bool _alive = true;
+    public bool alive = true;
 
     private void OnValidate() 
     {
@@ -36,17 +38,18 @@ public class Player : MonoBehaviour//, IDamageable
         OnValidate();
 
         healthBase.OnDamage += Damage;
-        healthBase.OnDamage += OnKill;
+        healthBase.OnKill += OnKill;
     }
 
 #region HEALTH
     private void OnKill(HealthBase h)
     {
-        if(_alive)
+        if(alive)
         {
-            _alive = false;
+            alive = false;
             animator.SetTrigger("Death");
             colliders.ForEach(i => i.enabled = false);
+            
         }
     }
 
@@ -63,38 +66,41 @@ public class Player : MonoBehaviour//, IDamageable
 
     void Update()
     {
-        transform.Rotate(0, Input.GetAxis("Horizontal") * turnSpeed * Time.deltaTime, 0);
-
-        var inputAxisVertical = Input.GetAxis("Vertical");
-        var speedVector = transform.forward * inputAxisVertical * speed;
-
-        if(characterController.isGrounded)
+        if(alive == true)
         {
-            if(Input.GetKeyDown(KeyCode.Space))
+            transform.Rotate(0, Input.GetAxis("Horizontal") * turnSpeed * Time.deltaTime, 0);
+
+            var inputAxisVertical = Input.GetAxis("Vertical");
+            var speedVector = transform.forward * inputAxisVertical * speed;
+
+            if(characterController.isGrounded)
             {
-                vSpeed = jumpSpeed;
+                if(Input.GetKeyDown(KeyCode.Space))
+                {
+                    vSpeed = jumpSpeed;
+                }
             }
+            
+            var isWalking = inputAxisVertical != 0;
+            if(isWalking)
+            {
+                if(Input.GetKey(keyRun))
+                {
+                    speedVector *= speedRun;
+                    animator.speed = speedRun;
+                }
+                else
+                {
+                    animator.speed = 1;
+                }
+            }
+
+            vSpeed -= gravity * Time.deltaTime;
+            speedVector.y = vSpeed;
+
+            characterController.Move(speedVector * Time.deltaTime);
+
+            animator.SetBool("Run", isWalking);
         }
-        
-        var isWalking = inputAxisVertical != 0;
-        if(isWalking)
-        {
-            if(Input.GetKey(keyRun))
-            {
-                speedVector *= speedRun;
-                animator.speed = speedRun;
-            }
-            else
-            {
-                animator.speed = 1;
-            }
-        }
-
-        vSpeed -= gravity * Time.deltaTime;
-        speedVector.y = vSpeed;
-
-        characterController.Move(speedVector * Time.deltaTime);
-
-        animator.SetBool("Run", isWalking);
     }
 }

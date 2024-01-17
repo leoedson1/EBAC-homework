@@ -322,7 +322,7 @@
 -r:"C:/Program Files/Unity/Hub/Editor/2021.3.19f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.Xml.XPath.XDocument.dll"
 -r:"C:/Program Files/Unity/Hub/Editor/2021.3.19f1/Editor/Data/NetStandard/Extensions/2.0.0/System.Runtime.InteropServices.WindowsRuntime.dll"
 -r:"C:/Program Files/Unity/Hub/Editor/2021.3.19f1/Editor/Data/NetStandard/ref/2.1.0/netstandard.dll"
--r:"D:/GitHub/EBAC-homework/EBAC-homework/Library/PackageCache/com.unity.visualscripting@1.8.0/Runtime/VisualScripting.Flow/Dependencies/NCalc/Unity.VisualScripting.Antlr3.Runtime.dll"
+-r:"E:/GitHub/EBAC-homework/EBAC-homework/Library/PackageCache/com.unity.visualscripting@1.8.0/Runtime/VisualScripting.Flow/Dependencies/NCalc/Unity.VisualScripting.Antlr3.Runtime.dll"
 -r:"Library/Bee/artifacts/1900b0aE.dag/Assembly-CSharp-firstpass.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aE.dag/Cinemachine.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aE.dag/com.unity.cinemachine.editor.ref.dll"
@@ -356,6 +356,7 @@
 -r:"Library/Bee/artifacts/1900b0aE.dag/UnityEngine.UI.ref.dll"
 "Assets/Inputs/Inputs.cs"
 "Assets/Scripts/Animation/AnimationBase.cs"
+"Assets/Scripts/Checkpoint/CheckpointBase.cs"
 "Assets/Scripts/Ebac/Core/Singleton/Singleton.cs"
 "Assets/Scripts/Ebac/StateMachine/FSMExample.cs"
 "Assets/Scripts/Ebac/StateMachine/StateBase.cs"
@@ -377,7 +378,7 @@
 "Assets/Scripts/Player/Player.cs"
 "Assets/Scripts/Player/PlayerAbilityBase.cs"
 "Assets/Scripts/Player/PlayerAbilityShoot.cs"
-"Assets/Scripts/UI/UIGunUpdate.cs"
+"Assets/Scripts/UI/UIFillUpdate.cs"
 "Assets/Scripts/Utils/FlashColor.cs"
 -langversion:9.0
 
