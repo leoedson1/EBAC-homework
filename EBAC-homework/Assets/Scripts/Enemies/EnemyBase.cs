@@ -92,7 +92,9 @@ namespace Enemy
         {
             if(lookAtPlayer)
             {
-                transform.LookAt(_player.transform.position);
+                //transform.LookAt(_player.transform.position);
+                Vector3 targetPostition = new Vector3( _player.transform.position.x, this.transform.position.y, _player.transform.position.z ) ;
+                this.transform.LookAt( targetPostition ) ;
             }
 
 /*          DEBUG

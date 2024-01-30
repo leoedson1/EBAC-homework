@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Ebac.StateMachine;
+using Unity.VisualScripting;
+using UnityEditor;
 
 namespace Boss
 {
@@ -73,7 +75,7 @@ namespace Boss
         {
             base.OnStateEnter(objs);
             Debug.Log("Enter Death");
-            boss.transform.localScale = Vector3.one * .2f;
+            //boss.transform.localScale = Vector3.one * .2f;
         }
     }
 }

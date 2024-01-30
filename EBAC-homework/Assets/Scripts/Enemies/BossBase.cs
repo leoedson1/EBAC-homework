@@ -64,6 +64,8 @@ namespace Boss
 
         private void OnBossKill(HealthBase h)
         {
+            if(eCollider != null) eCollider.enabled = false;
+            Destroy(gameObject, 3f);
             SwitchState(BossAction.DEATH);
         }
 
@@ -126,6 +128,8 @@ namespace Boss
             while(Vector3.Distance(transform.position, t.position) > 1f)
             {
                 transform.position = Vector3.MoveTowards(transform.position, t.position, Time.deltaTime * speed);
+                Vector3 targetPostition = new Vector3( t.transform.position.x, this.transform.position.y, t.transform.position.z ) ; //enxerto
+                this.transform.LookAt( targetPostition ) ; //enxerto
                 yield return new WaitForEndOfFrame();
             }
             onArrive?.Invoke();
