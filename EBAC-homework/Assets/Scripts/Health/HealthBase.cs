@@ -11,7 +11,7 @@ public class HealthBase : MonoBehaviour, IDamageable
     public Action<HealthBase> OnDamage;
     public Action<HealthBase> OnKill;
 
-    public List<UIFillUpdate> healthFillUpdate;
+    public List<HealthUIFillUpdate> healthFillUpdate;
 
     private void Awake()
     {
@@ -23,7 +23,7 @@ public class HealthBase : MonoBehaviour, IDamageable
         ResetLife();
     }
 
-    protected void ResetLife()
+    public void ResetLife()
     {
         _currentLife = startLife;
     }

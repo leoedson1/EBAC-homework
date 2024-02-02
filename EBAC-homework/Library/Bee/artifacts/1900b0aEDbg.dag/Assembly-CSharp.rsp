@@ -359,6 +359,7 @@
 "Assets/Inputs/Inputs.cs"
 "Assets/Scripts/Animation/AnimationBase.cs"
 "Assets/Scripts/Checkpoint/CheckpointBase.cs"
+"Assets/Scripts/Checkpoint/CheckpointManager.cs"
 "Assets/Scripts/Ebac/Core/Singleton/Singleton.cs"
 "Assets/Scripts/Ebac/StateMachine/FSMExample.cs"
 "Assets/Scripts/Ebac/StateMachine/StateBase.cs"
@@ -380,6 +381,7 @@
 "Assets/Scripts/Player/Player.cs"
 "Assets/Scripts/Player/PlayerAbilityBase.cs"
 "Assets/Scripts/Player/PlayerAbilityShoot.cs"
+"Assets/Scripts/UI/HealthUIFillUpdate.cs"
 "Assets/Scripts/UI/UIFillUpdate.cs"
 "Assets/Scripts/Utils/FlashColor.cs"
 -langversion:9.0
