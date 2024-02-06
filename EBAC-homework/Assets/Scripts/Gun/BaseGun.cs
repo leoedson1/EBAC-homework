@@ -26,6 +26,8 @@ public class BaseGun : MonoBehaviour
         projectile.transform.position = positionToShoot.position;
         projectile.transform.rotation = positionToShoot.rotation;
         projectile.speed = speed;
+
+        CameraShake.Instance.Shake();
     }
 
     public void StartShoot()

@@ -9,7 +9,7 @@ public class CheckpointBase : MonoBehaviour
 
     private bool _checkpointActivated = false;
     private Color _blackTint = new Color(1, 1, 1);
-    private string _checkpointKey = "Checkpoint Key";
+    //private string _checkpointKey = "Checkpoint Key";
 
     private void OnTriggerEnter(Collider other) 
     {
