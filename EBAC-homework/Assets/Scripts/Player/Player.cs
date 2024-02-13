@@ -1,8 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Ebac.Core.Singleton;
 
-public class Player : MonoBehaviour//, IDamageable
+public class Player : Singleton<Player>//, IDamageable
 {
     public List<Collider> colliders;
     public Animator animator;
@@ -33,12 +34,14 @@ public class Player : MonoBehaviour//, IDamageable
         if(healthBase == null) healthBase = GetComponent<HealthBase>();
     }
 
-    private void Awake() 
+    protected override void Awake()
     {
+        base.Awake();
+
         OnValidate();
 
         healthBase.OnDamage += Damage;
-        healthBase.OnKill += OnKill;
+        healthBase.OnKill += OnKill;   
     }
 
 #region HEALTH

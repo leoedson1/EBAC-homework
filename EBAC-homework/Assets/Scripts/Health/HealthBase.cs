@@ -26,9 +26,10 @@ public class HealthBase : MonoBehaviour, IDamageable
     public void ResetLife()
     {
         _currentLife = startLife;
+        UpdateUI();
     }
 
-        protected virtual void Kill()
+    protected virtual void Kill()
     {
         if(destroyOnKill)
             Destroy(gameObject, 3f);

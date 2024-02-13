@@ -5,16 +5,16 @@ m_ProjectFiles:
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 638424837913545063
-    m_Hash: 4161824074
+      ticks: 638430020500032460
+    m_Hash: 1622482153
   m_LockFileStatus:
     m_FilePath: E:/GitHub/EBAC-homework/EBAC-homework/Packages/packages-lock.json
     m_PathExists: 1
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 638424837914457466
-    m_Hash: 3140929084
+      ticks: 638430020500548518
+    m_Hash: 1537821518
 m_EmbeddedPackageManifests:
   m_ManifestsStatus: {}
 m_LocalPackages:
@@ -1085,12 +1085,12 @@ m_ResolvedPackages:
   unityLifecycle:
     version: 1.1.31
     nextVersion: 
-- packageId: com.unity.textmeshpro@3.0.6
+- packageId: com.unity.textmeshpro@3.0.7
   testable: 0
   isDirectDependency: 1
-  version: 3.0.6
+  version: 3.0.7
   source: 1
-  resolvedPath: E:\GitHub\EBAC-homework\EBAC-homework\Library\PackageCache\com.unity.textmeshpro@3.0.6
+  resolvedPath: E:\GitHub\EBAC-homework\EBAC-homework\Library\PackageCache\com.unity.textmeshpro@3.0.7
   assetPath: Packages/com.unity.textmeshpro
   name: com.unity.textmeshpro
   displayName: TextMeshPro
@@ -1099,7 +1099,7 @@ m_ResolvedPackages:
     email: 
     url: 
   category: Text Rendering
-  type: asset
+  type: assets
   description: 'TextMeshPro is the ultimate text solution for Unity. It''s the perfect
     replacement for Unity''s UI Text and the legacy Text Mesh.
 
@@ -1212,6 +1212,7 @@ m_ResolvedPackages:
     - 3.2.0-pre.5
     - 3.2.0-pre.6
     - 3.2.0-pre.7
+    - 3.2.0-pre.8
     - 4.0.0-pre.1
     - 4.0.0-pre.2
     compatible:
@@ -1224,6 +1225,7 @@ m_ResolvedPackages:
     - 3.2.0-pre.5
     - 3.2.0-pre.6
     - 3.2.0-pre.7
+    - 3.2.0-pre.8
     verified: 3.0.7
   dependencies:
   - name: com.unity.ugui
@@ -1251,13 +1253,13 @@ m_ResolvedPackages:
     configSource: 0
   hideInEditor: 0
   isAssetStorePackage: 0
-  datePublishedTicks: 637547111200000000
-  documentationUrl: 
+  datePublishedTicks: 638410382150000000
+  documentationUrl: https://docs.unity3d.com/Packages/com.unity.textmeshpro@3.0/manual/index.html
   hasRepository: 1
   repository:
     type: git
     url: https://github.cds.internal.unity3d.com/unity/com.unity.textmeshpro.git
-    revision: 01e57e3b7de18af9dfe9baaa0a0ff5cc4765c899
+    revision: 5c364f204e10eaec84fcbff640ad4d833774c1ed
     path: 
   unityLifecycle:
     version: 3.0.6
