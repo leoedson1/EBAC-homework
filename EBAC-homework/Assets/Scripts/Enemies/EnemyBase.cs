@@ -13,6 +13,7 @@ namespace Enemy
         public ParticleSystem dmgParticle;
 
         public float startLife = 10f;
+        public float collisionDamage = 5f;
         public bool lookAtPlayer = false;
 
         [SerializeField] private float _currentLife;
@@ -122,7 +123,7 @@ namespace Enemy
 
             if(p != null)
             {
-                p.healthBase.Damage(1);
+                p.healthBase.Damage(collisionDamage);
             }
         }
     }

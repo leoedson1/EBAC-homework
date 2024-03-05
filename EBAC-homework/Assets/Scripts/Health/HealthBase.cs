@@ -1,6 +1,8 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Suit;
 
 public class HealthBase : MonoBehaviour, IDamageable
 {
@@ -12,6 +14,8 @@ public class HealthBase : MonoBehaviour, IDamageable
     public Action<HealthBase> OnKill;
 
     public List<HealthUIFillUpdate> healthFillUpdate;
+
+    public float damageMultiplier = 1f;
 
     private void Awake()
     {
@@ -45,7 +49,7 @@ public class HealthBase : MonoBehaviour, IDamageable
     
     public void Damage(float h)
     {
-        _currentLife -= h;
+        _currentLife -= h * damageMultiplier;
 
         if(_currentLife <= 0)
         {
@@ -67,5 +71,17 @@ public class HealthBase : MonoBehaviour, IDamageable
         {
             healthFillUpdate.ForEach(i => i.UpdateValue((float) _currentLife / startLife));
         }
+    }
+
+        public void ChangeDamageMultiplier(float damageMultiplier, float duration)
+    {
+        StartCoroutine(ChangeDamageMultiplierCoroutine(damageMultiplier, duration));
+    }
+
+    IEnumerator ChangeDamageMultiplierCoroutine(float damageMultiplier, float duration)
+    {
+        this.damageMultiplier = damageMultiplier;
+        yield return new WaitForSeconds(duration);
+        this.damageMultiplier = 1;
     }
 }

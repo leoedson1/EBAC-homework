@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Ebac.Core.Singleton;
+using Suit;
+
 
 public class Player : Singleton<Player>//, IDamageable
 {
@@ -13,6 +15,7 @@ public class Player : Singleton<Player>//, IDamageable
     public float speed = 1f;
     public float turnSpeed = 1f;
     public float gravity = 9.8f;
+    public bool alive = true;
 
     [Header("Run Setup")]
     public KeyCode keyRun = KeyCode.LeftShift;
@@ -27,7 +30,9 @@ public class Player : Singleton<Player>//, IDamageable
     public HealthBase healthBase;
     public UIFillUpdate uIFillUpdate;
 
-    public bool alive = true;
+
+    [Space]
+    [SerializeField] private SuitSwapper _suitSwapper;
 
     private void OnValidate() 
     {
@@ -126,4 +131,30 @@ public class Player : Singleton<Player>//, IDamageable
             transform.position = CheckpointManager.Instance.GetLastCheckpointPosition();
         }
     }
+
+    public void ChangeSpeed(float speed, float duration)
+    {
+        StartCoroutine(ChangeSpeedCoroutine(speed, duration));
+    }
+
+    IEnumerator ChangeSpeedCoroutine(float localSpeed, float duration)
+    {
+        var defaultSpeed = speed;
+        speed = localSpeed;
+        yield return new WaitForSeconds(duration);
+        speed = defaultSpeed;
+    }
+
+    public void ChangeTexture(SuitSetup setup, float duration)
+    {
+        StartCoroutine(ChangeTextureCoroutine(setup, duration));
+    }
+
+    IEnumerator ChangeTextureCoroutine(SuitSetup setup, float duration)
+    {
+        _suitSwapper.ChangeTexture(setup);
+        yield return new WaitForSeconds(duration);
+        _suitSwapper.ResetTexture();
+    }
+
 }
