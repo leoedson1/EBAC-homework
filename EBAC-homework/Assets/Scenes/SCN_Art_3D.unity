@@ -5857,7 +5857,7 @@ MonoBehaviour:
   shakeDuration: 0.3
   shakeForce: 1000
   dropCoinAmount: 10
-  coinPrefab: {fileID: 0}
+  coinPrefab: {fileID: 8008683098267517153, guid: dc5d4ff9f6bea7441b7beba7a9ed91ec, type: 3}
   dropPosition: {fileID: 841795515}
 --- !u!4 &780716046
 Transform:
