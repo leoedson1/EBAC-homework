@@ -12,13 +12,14 @@ namespace Items
         public ParticleSystem iParticleSystem;
         public float timeToHide = 3;
         public GameObject itemGraphic;
-        public Collider iCollider;
+        public Collider[] iColliders;
 
         [Header("Sounds")]
         public AudioSource audioSource;
 
         private void Awake()
         {
+            iColliders = GetComponentsInChildren<Collider>();
             //if(coinParticleSystem != null) coinParticleSystem.transform.SetParent(null);
         }
         
@@ -32,7 +33,13 @@ namespace Items
 
         protected virtual void Collect()
         {
-            if(iCollider != null) iCollider.enabled = false;
+            if(iColliders != null)
+            {
+                for(int i= 0; i < iColliders.Length; ++i)
+                {
+                iColliders[i].enabled = false;
+                }
+            } 
             if(itemGraphic != null) itemGraphic.SetActive(false);
             Invoke("HideObject", timeToHide);
             OnCollect();
