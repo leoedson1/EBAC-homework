@@ -9,6 +9,7 @@ public class PlayerAbilityShoot : PlayerAbilityBase
     public Player mainPlayer;
     public BaseGun gun1;
     public BaseGun gun2;
+    public FlashColor flashColor;
     public Transform gunPosition;
     public TMP_Text equippedGunUI;
 
@@ -52,6 +53,7 @@ public class PlayerAbilityShoot : PlayerAbilityBase
         if(player.alive == true) //condicional que inseri depois. não sei se é a melhor opção pra fazer essa checagem.
         {
             _currentGun.StartShoot();
+            flashColor?.Flash();
             Debug.Log("Start Shoot");
         }
     }

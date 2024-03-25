@@ -21,7 +21,8 @@ public class Player : Singleton<Player>//, IDamageable
     public KeyCode keyRun = KeyCode.LeftShift;
     public float speedRun = 1.5f;
 
-    private float vSpeed = 0f;
+    private float _vSpeed = 0f;
+    private bool _jumping = false;
 
     [Header("Flash")]
     public List<FlashColor> flashColors;
@@ -94,9 +95,20 @@ public class Player : Singleton<Player>//, IDamageable
 
             if(characterController.isGrounded)
             {
+                if(_jumping)
+                {
+                    _jumping = false;
+                    animator.SetTrigger("Land");
+                }
+
                 if(Input.GetKeyDown(KeyCode.Space))
                 {
-                    vSpeed = jumpSpeed;
+                    _vSpeed = jumpSpeed;
+                    if(!_jumping)
+                    {
+                        _jumping = true;
+                        animator.SetTrigger("Jump");
+                    }
                 }
             }
             
@@ -114,8 +126,8 @@ public class Player : Singleton<Player>//, IDamageable
                 }
             }
 
-            vSpeed -= gravity * Time.deltaTime;
-            speedVector.y = vSpeed;
+            _vSpeed -= gravity * Time.deltaTime;
+            speedVector.y = _vSpeed;
 
             characterController.Move(speedVector * Time.deltaTime);
 
