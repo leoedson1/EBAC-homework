@@ -1796,6 +1796,7 @@ GameObject:
   - component: {fileID: 1043136207}
   - component: {fileID: 1043136206}
   - component: {fileID: 1043136209}
+  - component: {fileID: 1043136210}
   m_Layer: 5
   m_Name: Play
   m_TagString: Untagged
@@ -1930,6 +1931,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 50a30608538044b4e8244112ac2a8731, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1043136210
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1043136204}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a87632ff55b162e4884b8a3b9df7991f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  uiTextName: {fileID: 345097649}
 --- !u!1 &1061300612
 GameObject:
   m_ObjectHideFlags: 0

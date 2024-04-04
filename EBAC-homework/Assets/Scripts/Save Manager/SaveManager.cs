@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.IO;
@@ -6,15 +7,33 @@ using Ebac.Core.Singleton;
 using Items;
 public class SaveManager : Singleton<SaveManager>
 {
+    public int lastLevel;
+    public Action<SaveSetup> FileLoaded;
+    public SaveSetup Setup
+    {
+        get
+        { return _saveSetup; }
+    }
+
     private SaveSetup _saveSetup;
+    [SerializeField] private string _path = Application.streamingAssetsPath + "/save.txt";
 
     protected override void Awake()
     {
         base.Awake();
         DontDestroyOnLoad(gameObject);
+    }
+
+    private void CreateNewSave()
+    {
         _saveSetup = new SaveSetup();
-        _saveSetup.lastLevel = 2;
+        _saveSetup.lastLevel = 0;
         _saveSetup.playerName = "Leo";    
+    }
+    
+    private void Start()
+    {
+        Invoke(nameof(Load), .1f);
     }
 
 #region SAVE
@@ -42,21 +61,39 @@ public class SaveManager : Singleton<SaveManager>
     public void SaveItems()
     {
         _saveSetup.coins = Items.ItemManager.Instance.GetItemByType(Items.ItemType.COIN).soInt.value;
-        _saveSetup.coins = Items.ItemManager.Instance.GetItemByType(Items.ItemType.LIFE_PACK).soInt.value;
+        _saveSetup.health = Items.ItemManager.Instance.GetItemByType(Items.ItemType.LIFE_PACK).soInt.value;
         Save();
     }
 #endregion
 
     private void SaveFile(string json)
     {
-        string path = Application.dataPath + "/save.txt";
 /*
         string fileLoaded = "";
 
         if(File.Exists(path)) fileLoaded = File.ReadAllText(path);
 */
-        Debug.Log(path);
-        File.WriteAllText(path, json); 
+        Debug.Log(_path);
+        File.WriteAllText(_path, json); 
+    }
+
+    [NaughtyAttributes.Button]
+    private void Load()
+    {
+        string fileLoaded = "";
+        if(File.Exists(_path))
+        {
+            fileLoaded = File.ReadAllText(_path);
+            _saveSetup = JsonUtility.FromJson<SaveSetup>(fileLoaded);
+            lastLevel = _saveSetup.lastLevel;
+        }
+        else
+        {
+            CreateNewSave();
+            Save();
+        }
+        
+        FileLoaded.Invoke(_saveSetup);
     }
 
     [NaughtyAttributes.Button]
