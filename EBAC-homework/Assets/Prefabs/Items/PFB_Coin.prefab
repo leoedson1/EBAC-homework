@@ -60,11 +60,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemType: 0
+  sfxType: 1
   compareTag: Player
   iParticleSystem: {fileID: 0}
   timeToHide: 3
   itemGraphic: {fileID: 3944634908140149425}
-  iCollider: {fileID: 4215159644746093323}
+  iColliders: []
   audioSource: {fileID: 0}
 --- !u!1001 &4215159645007882208
 PrefabInstance:
